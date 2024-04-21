@@ -7,11 +7,12 @@ from flask import Flask, jsonify, make_response
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
 
 
 @app.teardown_appcontext
-def close_db():
+def close_db(error):
     """ Close Storage """
     storage.close()
 
