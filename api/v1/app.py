@@ -16,6 +16,7 @@ def close_db(error):
     """ Close Storage """
     storage.close()
 
+
 @app.errorhandler(404)
 def error_404(error):
     """ gives json 404 error """
