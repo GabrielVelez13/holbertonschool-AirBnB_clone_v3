@@ -15,6 +15,7 @@ def close_db():
     storage.close()
 
 if __name__ == "__main__":
+    """ Connects to host """
     host = environ.get('HBNB_API_HOST')
     port = environ.get('HBNB_API_PORT')
     if not host:
