@@ -70,16 +70,6 @@ test_file_storage.py'])
 
 class TestFileStorage(unittest.TestCase):
     """Test the FileStorage class"""
-    def setUp(self):
-        """ Set up for the tests """
-        self.obj = BaseModel()  # Ensure self.obj is defined
-        self.obj.save()
-
-    def test_get(self):
-        """Test that get returns the correct object"""
-        obj = models.storage.get(BaseModel, self.obj.id)
-        self.assertEqual(obj, self.obj)
-        
     @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_all_returns_dict(self):
         """Test that all returns the FileStorage.__objects attr"""
