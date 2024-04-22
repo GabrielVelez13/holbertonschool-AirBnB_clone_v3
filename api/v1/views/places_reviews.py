@@ -23,7 +23,7 @@ def get_reviews(place_id):
 
     reviews = [review.to_dict() for review in place.reviews]
 
-    return jsonify(reviews)
+    return jsonify(reviews.to_dict())
 
 
 @app_views.route('/reviews/<review_id>', methods=['GET'], strict_slashes=False)
