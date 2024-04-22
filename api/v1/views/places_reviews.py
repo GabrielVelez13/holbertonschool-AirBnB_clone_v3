@@ -22,8 +22,10 @@ def get_reviews(place_id):
         abort(404)
 
     reviews = [review.to_dict() for review in place.reviews]
+    if not reviews:
+        return jsonify([])
 
-    return jsonify(reviews.to_dict())
+    return jsonify(reviews)
 
 
 @app_views.route('/reviews/<review_id>', methods=['GET'], strict_slashes=False)
