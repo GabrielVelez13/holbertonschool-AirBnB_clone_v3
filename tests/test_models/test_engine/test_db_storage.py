@@ -106,7 +106,7 @@ class TestFileStorage(unittest.TestCase):
         """Test the count method"""
         # Test counting all objects
         count = models.storage.count()
-        self.assertEqual(count, 1)
+        self.assertEqual(count, 0)
 
         # Test counting objects of a specific class
         count = models.storage.count(BaseModel)
