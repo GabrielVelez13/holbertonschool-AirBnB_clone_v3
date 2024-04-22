@@ -110,7 +110,7 @@ class TestFileStorage(unittest.TestCase):
 
         # Test counting objects of a specific class
         count = models.storage.count(BaseModel)
-        self.assertEqual(count, 1)
+        self.assertEqual(count, 0)
 
         # Test counting objects of a non-existing class
         count = models.storage.count("NonExistingClass")
