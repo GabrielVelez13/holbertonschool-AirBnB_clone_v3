@@ -21,6 +21,8 @@ else:
 
 class BaseModel:
     """The BaseModel class from which future classes will be derived"""
+    __tablename__ = 'base'
+
     if models.storage_t == "db":
         id = Column(String(60), primary_key=True)
         created_at = Column(DateTime, default=datetime.utcnow)
