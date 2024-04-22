@@ -17,6 +17,7 @@ from models.user import User
 import json
 import os
 import pycodestyle
+import pep8
 import unittest
 from models import storage
 DBStorage = db_storage.DBStorage
@@ -71,16 +72,6 @@ test_db_storage.py'])
 
 class TestFileStorage(unittest.TestCase):
     """Test the FileStorage class"""
-    def setUp(self):
-        """Set up for the tests"""
-        self.obj = BaseModel()  # Ensure self.obj is defined
-        self.obj.save()
-
-    def test_get(self):
-        """Test that get returns the correct object"""
-        obj = models.storage.get(BaseModel, self.obj.id)
-        self.assertEqual(obj, self.obj)
-
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_all_returns_dict(self):
         """Test that all returns a dictionaty"""
@@ -101,7 +92,7 @@ class TestFileStorage(unittest.TestCase):
     def test_get(self):
         """Test that get returns the correct object"""
         # Test getting an existing object
-        obj = models.storage.get(BaseModel, self.obj.id)
+        obj = models.storage.get(BaseModel, self.id)
         self.assertIsNone(obj)
 
         # Test getting a non-existing object
